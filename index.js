@@ -56,7 +56,7 @@ function resume()
     document.getElementById('numbergame').style.display="none";
  }
 
- document.getElementById('form-id').addEventListener('submit', (e)=>print(e));
+ document.getElementById('form-id').addEventListener('submit', (e)=> {e.preventDefault(); print(e)});
 
  function print(event)
  {  
