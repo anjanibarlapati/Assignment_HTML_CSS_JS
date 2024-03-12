@@ -2,6 +2,8 @@ document.getElementById('tab-home').addEventListener('click', () =>showTab('Home
 document.getElementById('tab-blog').addEventListener('click', ()=>showTab('Blogs'))
 document.getElementById('tab-share').addEventListener('click', ()=>showTab('Share'))
 document.getElementById('tab-about').addEventListener('click', ()=>showTab('About-Us'))
+document.getElementById('tab-list').addEventListener('click', ()=>showTab('table-div'))
+document.getElementById('tab-object').addEventListener('click', ()=>showTab('object-div'))
 
 function showTab(activeTabId)
 {
@@ -84,4 +86,99 @@ function resume()
    document.getElementById('submit-form').style.display="contents";
 
  }
- 
+
+var list=["Anjani","HTML","CSS","JS","Webpage"];
+
+function renderTable()
+{  const heading=document.createElement("h1");
+    heading.textContent="Rendering list of items Task";
+   var table=document.getElementById("table");
+   table.innerHTML="<tr><th>Name</th><th>Deletion Operation</th></tr>";
+    list.forEach(function(item, index){
+      var row=table.insertRow();
+      var c1=row.insertCell(0);
+      var c2=row.insertCell(1);
+      c1.textContent=item;
+      console.log("hello");
+      var del=document.createElement("button");
+      del.textContent="Delete";
+     del.onclick=function()
+     {
+        deleteItem(index);
+     };
+     c2.appendChild(del);
+    });
+}
+
+function deleteItem(index)
+{
+   list.splice(index,1);
+   renderTable();
+}
+function addItem()
+{
+   var newItem=document.getElementById("newitem").value;
+   if(newItem.trim()==="")
+   {
+      alert("enter any name");
+      return;
+   }
+   list.push(newItem);
+   renderTable();
+   document.getElementById("newitem").value=" ";
+
+}
+renderTable();
+
+function person(name,email)
+{
+   const obj={};
+   obj.name=name;
+   obj.email=email;
+   return obj;
+}
+const persons=[
+new person("anjani","anjani@gmail.com"),
+new person("anjali","anjali@gmail.com"),
+new person("anoosha","anoosha@gmai.com"),
+new person("anusha","anusha@gmail.com"),
+new person("keerthana","keerthana@gmail.com"),
+new person("mamatha","mamatha@gmail.com"),
+new person("nagusha","nagusha@gmail.com"),
+new person("nikitha","nikitha@gmail.com"),
+new person("rekha","rekha@gmail.com"),
+new person("shailaja","shailaja@gmail.com"),
+new person("sreeja","sreeja@gmail.com"),
+new person("usha sri","ushasri@gmail.com"),
+new person("varun","varun@gmail.com"),
+new person("vinay sai","vinaysai@gmail.com")
+];
+
+function renderTable_interns()
+{  
+   const div2=document.createElement("div");
+   document.body.appendChild(div2);
+   div2.className="tab-content";
+   div2.id="object-div";
+   const heading=document.createElement("h1");
+   heading.textContent="Object Task";
+   div2.appendChild(heading);
+   const table1=document.createElement("table");
+   table1.innerHTML="<tr><th>Name</th><th>Email</th></tr>";
+   persons.forEach(p =>
+   {
+      var row=table1.insertRow();
+      var c1=row.insertCell(0);
+      var c2=row.insertCell(1);
+      c1.textContent=p.name;
+      c2.textContent=p.email;
+   });
+   div2.appendChild(table1);
+
+}
+renderTable_interns();
+
+function toggleNavbar(){
+   var navbar= document.querySelector('.header');
+   navbar.classList.toggle('active');
+ }

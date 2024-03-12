@@ -17,6 +17,9 @@
 }
 .header
 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color:rgb(37, 47, 50);
     border-radius: 7px;
     padding: 20px;
@@ -28,13 +31,11 @@
 }
 .menu
 {
-    margin-left: 200px;
-    color: black;
-    border-radius: 7px;
     font-size: 25px;
     font-weight: bolder;
     text-decoration:none;
     color: white;
+    align-items: right;
 }
 
 .images
@@ -58,6 +59,7 @@
 {
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
     padding:20px;
     margin: 20px;
 }
@@ -198,3 +200,39 @@
 {
    text-align: center;
 }
+
+table,td,th
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td,th
+{
+    padding: 10px;
+    text-align: center;
+}
+.navbar-toggler{
+    display: none;
+}
+@media only screen and (max-width: 1000px) {
+    
+    .header {
+        flex-direction: column; 
+        align-items: start;
+    }
+    .navbar-toggler {
+        display: block;
+    }
+   
+    .header.active a{
+       display: block; 
+    }
+    .header a
+    {
+        float:none;
+        width: 100%;
+        display: none;   
+    }
+}
+
+

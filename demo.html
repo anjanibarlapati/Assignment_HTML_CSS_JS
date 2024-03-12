@@ -8,12 +8,21 @@
         <nav class="navbar">
            <h1><marquee>Explore the World and Make Memories</marquee></h1>
         </nav >
+
+ <!--Header-->  
+     
         <div class="header">
+            <button class="navbar-toggler" id="toggler" onclick="toggleNavbar()">☰</button>
             <a id="tab-home" class="menu" href="#">Home</a>
             <a id="tab-blog" class="menu" href="#">Blogs</a>
             <a id="tab-share" class="menu" href="#">Share with Us</a>
             <a id="tab-about" class="menu" href="#">About Us</a>
+            <a id="tab-list" class="menu" href="#">Rendering List</a>
+            <a id="tab-object" class="menu" href="#">Object Task</a>     
         </div>
+
+<section class="section">
+<!--Home division-->
        <div class="tab-content" id="Home">
         <div class="images">
           <div>
@@ -34,7 +43,9 @@
             </p>
          </div>
       </div>
- 
+
+
+<!--Blogs section--> 
       <div class="tab-content" id="Blogs">
         <div class="Blogs">
         <section class="section1">
@@ -67,6 +78,7 @@
         </div>
      </div>
 
+<!--Form division-->
      <div class="tab-content" id="Share">
         <h2 class="share-title">Share Your Beautiful Experiences with us and Create Memories for Lifetime</h2>
         <section class="form-section">
@@ -112,6 +124,7 @@
         </section>
      </div>
 
+     <!--About Us-->
      <div class="tab-content" id="About-Us">
         <h2 class="about">About Us</h2>
         <p class="about-text">Welcome to Travelling Blogs webpage, your ultimate destination for travel inspiration, tips, and adventure stories! We are a passionate team of globe-trotters dedicated to exploring the world and sharing our experiences with fellow travel enthusiasts like you.</p>
@@ -120,6 +133,8 @@
         <p class="about-text">But it is more than just a travel blog it's a community of like-minded individuals who share a passion for exploration and discovery. We encourage you to share your own travel stories, tips, and photos with us, and join the conversation on our social media channels.</p>
         <p class="about-text">So whether you're dreaming of trekking through the Himalayas, relaxing on the beaches of Bali, or embarking on a road trip across America, let it be your guide to unlocking the magic of travel. Join us as we explore the world, one adventure at a time!</p>
      </div>
+
+<!--Game-selectTimeout-->
 
      <div Id="game-Id">
         <h1 class="game-title">to play a fun game</h1>
@@ -134,9 +149,26 @@
         </div>
      </div>
 
+<!--Printing form details in HTML page-->
      <div id="submit-form">
 
      </div>
+
+<!--Rendering List-->
+<br><br>
+<div class="tab-content" id="table-div">
+
+    <input type='text' placeholder="Enter your name" id="newitem"></input>
+    <button onclick="addItem()"> Add </button>
+    <br><br>
+    <table id="table" >
+        <tr>
+            <th>Name</th>
+            <th>Deletion Operation</th>
+        </tr>
+    </table>
+</div>
     <script src="./index.js"> </script>
+</section>
     </body>
 </html>
